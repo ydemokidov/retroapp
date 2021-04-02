@@ -13,11 +13,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
-
+public class User extends BaseEntity {
     @Column(name = "last_name",length = 100,nullable = false)
     String lastName;
 
@@ -29,7 +25,4 @@ public class User {
 
     @Column(name="pwd",length = 50,nullable = false)
     String password;
-
-    @Column(name="created_at",nullable = false)
-    LocalDateTime createdAt;
 }
