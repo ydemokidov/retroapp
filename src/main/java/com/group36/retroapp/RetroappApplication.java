@@ -14,7 +14,7 @@ public class RetroappApplication {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(RetroappApplication.class, args);
-        DataSource dataSource = (DataSource) ctx.getBean("retroAppDataSource");
+       // DataSource dataSource = (DataSource) ctx.getBean("retroAppDataSource");
     }
 
 }
