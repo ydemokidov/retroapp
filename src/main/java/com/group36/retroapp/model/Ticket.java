@@ -3,7 +3,6 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "tickets")
 @FieldDefaults(level = AccessLevel.PRIVATE)
