@@ -19,7 +19,7 @@ public class Comment extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ticket_id")
-    private Ticket ticketId;
+    private Ticket ticket;
 
     @Column(name="text",length = 500,nullable = false)
     String text;

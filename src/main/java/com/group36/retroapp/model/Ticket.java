@@ -17,12 +17,12 @@ public class Ticket extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "assignee_id")
-    private User assigneeId;
+    private User assignee;
 
     @Column(name="text",length = 500,nullable = false)
     String text;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "board_column_id")
-    private BoardColumn boardColumnId;
+    private BoardColumn boardColumn;
 }
