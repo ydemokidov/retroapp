@@ -3,6 +3,7 @@ package com.group36.retroapp.model;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -13,7 +14,10 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Board extends BaseNamedEntity {
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "team_id")
-    private Team team;
+    Team team;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "board")
+    List<BoardColumn> columns;
 }

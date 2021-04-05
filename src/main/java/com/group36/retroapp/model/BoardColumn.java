@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "board_columns")
@@ -17,7 +18,10 @@ public class BoardColumn extends BaseNamedEntity {
     @Column(name = "order")
     int order;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "board_id")
-    private Board board;
+    Board board;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "boardColumn")
+    List<Ticket> tickets;
 }

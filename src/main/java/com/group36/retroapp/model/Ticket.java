@@ -2,6 +2,7 @@ package com.group36.retroapp.model;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tickets")
@@ -11,15 +12,21 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Ticket extends BaseTextEntity {
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "author_id")
-    private User author;
+    User author;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "assignee_id")
-    private User assignee;
+    User assignee;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "board_column_id")
-    private BoardColumn boardColumn;
+    BoardColumn boardColumn;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "ticket")
+    List<Comment> comments;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "ticket")
+    List<Vote> votes;
 }

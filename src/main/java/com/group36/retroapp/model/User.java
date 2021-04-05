@@ -6,6 +6,7 @@ import org.apache.tomcat.jni.Local;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -25,6 +26,9 @@ public class User extends BaseEntity {
 
     @Column(name="pwd",length = 50,nullable = false)
     String password;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "user")
+    List<TeamUser> teamUsers;
 
     public User(Integer id, LocalDateTime createdAt,String lastName,String firstName,String login, String password){
         super(id,createdAt);

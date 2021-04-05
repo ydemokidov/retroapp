@@ -15,11 +15,11 @@ public class Vote extends BaseEntity {
     @Column(name = "type",length = 100,nullable = false)
     String type;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "author_id")
-    private User author;
+    User author;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ticket_id")
-    private Ticket ticket;
+    Ticket ticket;
 }
