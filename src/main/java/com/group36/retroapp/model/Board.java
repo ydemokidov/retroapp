@@ -12,11 +12,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Board extends BaseEntity {
-
-    @Column(length = 50,nullable = false)
-    String name;
-
+public class Board extends BaseNamedEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
     private Team team;

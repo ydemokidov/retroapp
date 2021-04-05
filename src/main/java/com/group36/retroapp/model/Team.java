@@ -11,8 +11,6 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Team extends BaseEntity {
-    @Column(name = "name",length = 100,nullable = false)
-    String name;
+public class Team extends BaseNamedEntity {
 
 }

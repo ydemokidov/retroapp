@@ -1,5 +1,6 @@
 package com.group36.retroapp;
 
+import com.group36.retroapp.model.Comment;
 import com.group36.retroapp.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ class RetroappApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
     @Test

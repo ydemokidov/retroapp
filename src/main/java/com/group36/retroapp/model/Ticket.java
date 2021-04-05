@@ -10,17 +10,14 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Ticket extends BaseEntity {
+public class Ticket extends BaseTextEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "author_id")
-    private User authorId;
+    private User author;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "assignee_id")
     private User assignee;
-
-    @Column(name="text",length = 500,nullable = false)
-    String text;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "board_column_id")
