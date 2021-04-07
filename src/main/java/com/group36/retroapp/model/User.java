@@ -7,6 +7,7 @@ import org.apache.tomcat.jni.Local;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "users")
@@ -36,5 +37,18 @@ public class User extends BaseEntity {
         this.firstName = firstName;
         this.login = login;
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", login='" + login + '\'' +
+                ", password='" + password + '\'' +
+                //", teamUsers=" + teamUsers +
+                ", id=" + id +
+                ", createdAt=" + createdAt +
+                '}';
     }
 }
